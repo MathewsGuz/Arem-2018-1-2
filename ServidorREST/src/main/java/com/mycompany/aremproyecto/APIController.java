@@ -19,11 +19,11 @@ import org.springframework.web.bind.annotation.RestController;
  * @author Guzman
  */
 @RestController
-@RequestMapping(value = "/cuadrado")
+@RequestMapping(value = "/")
 public class APIController {
     
 
-    @RequestMapping(path = "/{numero}", method = RequestMethod.GET)
+    @RequestMapping(path = "/response/Cuadrado/{numero}", method = RequestMethod.GET)
     public ResponseEntity<?> manejadorGetIdMesaOrdersAPI(@PathVariable int numero) {
         try {
             //obtener datos que se enviarán a través del API
@@ -33,5 +33,4 @@ public class APIController {
             return new ResponseEntity<>("Error, no se encontro la mesa", HttpStatus.NOT_FOUND);
         }
     }
-
 }
