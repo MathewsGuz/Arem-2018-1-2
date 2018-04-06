@@ -24,13 +24,18 @@ public class APIController {
     
 
     @RequestMapping(path = "/response/Cuadrado/{numero}", method = RequestMethod.GET)
-    public ResponseEntity<?> manejadorGetIdMesaOrdersAPI(@PathVariable int numero) {
+    public ResponseEntity<?> manejadorGetOrdersAPI(@PathVariable int numero) {
         try {
             //obtener datos que se enviarán a través del API
             return new ResponseEntity<>(Operation.Square(numero), HttpStatus.ACCEPTED);
         } catch (Exception ex) {
             Logger.getLogger(APIController.class.getName()).log(Level.SEVERE, null, ex);
-            return new ResponseEntity<>("Error, no se encontro la mesa", HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>("Error, no se encontro la pagina", HttpStatus.NOT_FOUND);
         }
+    }
+    
+    @RequestMapping("/")
+    public String home(){
+        return "Servidor que calcula el cuadrado de un número.<br/> Agregue en la URL /response/Cuadrado/numeroParaCalcular";
     }
 }

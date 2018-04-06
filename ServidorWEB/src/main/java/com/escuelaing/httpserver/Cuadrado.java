@@ -20,7 +20,7 @@ public class Cuadrado implements Operation{
     public URL getUrl(String number) {
         URL url= null;
         try {
-            url= new URL("https://agile-springs-99176.herokuapp.com/cuadrado/"+number);
+            url= new URL("https://agile-springs-99176.herokuapp.com/response/Cuadrado/"+number);
         } catch (MalformedURLException ex) {
             Logger.getLogger(Cuadrado.class.getName()).log(Level.SEVERE, null, ex);
         }
